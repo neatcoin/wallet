@@ -2349,6 +2349,45 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@neatcoin@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@neatcoin@workspace:."
+  dependencies:
+    "@babel/core": ^7.16.0
+    "@babel/register": ^7.16.0
+    "@babel/runtime": ^7.16.3
+    "@crustio/crust-pin": ^1.0.0
+    "@pinata/sdk": ^1.1.23
+    "@polkadot/dev": ^0.63.33
+    "@polkadot/ts": ^0.4.15
+    "@types/bn.js": ^4.11.6
+    "@types/chart.js": ^2.9.34
+    "@types/file-saver": ^2.0.4
+    "@types/jest": ^27.0.2
+    "@types/react-beautiful-dnd": ^13.1.2
+    "@types/react-copy-to-clipboard": ^5.0.2
+    "@types/react-dom": ^17.0.11
+    "@types/react-router-dom": ^5.3.2
+    "@types/store": ^2.0.2
+    "@types/styled-components": ^5.1.15
+    "@types/styled-theming": ^2.2.5
+    concurrently: ^6.4.0
+    devtron: ^1.4.0
+    dnslink-cloudflare: ^3.0.0
+    electron: ^12.2.3
+    electron-builder: 22.14.7
+    electron-builder-notarize: ^1.2.0
+    i18next-scanner: ^3.1.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-is: ^17.0.2
+    source-map-explorer: ^2.5.2
+    styled-components: ^5.3.3
+    webpack: ^5.64.1
+    webpack-cli: ^4.9.1
+  languageName: unknown
+  linkType: soft
+
 "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3":
   version: 2.1.8-no-fsevents.3
   resolution: "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3"
@@ -14929,45 +14968,6 @@ __metadata:
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
   languageName: node
   linkType: hard
-
-"neatcoin-wallet-apps@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "neatcoin-wallet-apps@workspace:."
-  dependencies:
-    "@babel/core": ^7.16.0
-    "@babel/register": ^7.16.0
-    "@babel/runtime": ^7.16.3
-    "@crustio/crust-pin": ^1.0.0
-    "@pinata/sdk": ^1.1.23
-    "@polkadot/dev": ^0.63.33
-    "@polkadot/ts": ^0.4.15
-    "@types/bn.js": ^4.11.6
-    "@types/chart.js": ^2.9.34
-    "@types/file-saver": ^2.0.4
-    "@types/jest": ^27.0.2
-    "@types/react-beautiful-dnd": ^13.1.2
-    "@types/react-copy-to-clipboard": ^5.0.2
-    "@types/react-dom": ^17.0.11
-    "@types/react-router-dom": ^5.3.2
-    "@types/store": ^2.0.2
-    "@types/styled-components": ^5.1.15
-    "@types/styled-theming": ^2.2.5
-    concurrently: ^6.4.0
-    devtron: ^1.4.0
-    dnslink-cloudflare: ^3.0.0
-    electron: ^12.2.3
-    electron-builder: 22.14.7
-    electron-builder-notarize: ^1.2.0
-    i18next-scanner: ^3.1.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-is: ^17.0.2
-    source-map-explorer: ^2.5.2
-    styled-components: ^5.3.3
-    webpack: ^5.64.1
-    webpack-cli: ^4.9.1
-  languageName: unknown
-  linkType: soft
 
 "negotiator@npm:0.6.2, negotiator@npm:^0.6.2":
   version: 0.6.2

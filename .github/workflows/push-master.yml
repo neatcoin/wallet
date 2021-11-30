@@ -27,4 +27,4 @@ jobs:
     - name: Build apps
       run: yarn build
     - name: Publish to Github Pages
-      run: yarn polkadot-exec-ghpages --dist packages/apps/build --dest .
+      run: NODE_DEBUG=gh-pages yarn polkadot-exec-ghpages --dist packages/apps/build --dest .

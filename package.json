@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "build": "rm -rf packages/apps/build && mkdir -p packages/apps/build && cd packages/apps && yarn webpack --config webpack.config.cjs",
-    "start": "rm -rf packages/apps/build && cd packages/apps && yarn webpack-cli serve --config webpack.serve.cjs"
+    "start": "rm -rf packages/apps/build && cd packages/apps && yarn webpack-cli serve --config webpack.serve.cjs",
+    "publish-gh-pages": "yarn polkadot-exec-ghpages --dist packages/apps/build --dest ."
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

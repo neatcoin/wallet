@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // setup these right at front
-import '@polkadot/apps/initSettings';
+import './initSettings';
 import 'semantic-ui-css/semantic.min.css';
 import '@polkadot/react-components/i18n';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Root from '@polkadot/apps/Root';
+import Root from './Root';
 
 const rootId = 'root';
 const rootElement = document.getElementById(rootId);

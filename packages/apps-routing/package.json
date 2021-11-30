@@ -1,0 +1,11 @@
+{
+  "license": "GPL-3.0",
+  "name": "@neatcoin/apps-routing",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "@babel/runtime": "^7.16.3"
+  }
+}

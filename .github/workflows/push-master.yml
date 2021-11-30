@@ -1,0 +1,21 @@
+name: Master
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  # publish to gh-pages
+  www:
+    if: "! startsWith(github.event.head_commit.message, '[CI Skip]')"
+    strategy:
+      matrix:
+        step: ["publish-gh-pages"]
+    name: ${{ matrix.step }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: ${{ matrix.step }}
+      run: |
+        yarn install --immutable | grep -v 'YN0013'
+        yarn ${{ matrix.step }}

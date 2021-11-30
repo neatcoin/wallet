@@ -13,6 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Checkout repository
+    - name: Setup git user
+      run: |
+        git config --global user.name "Wei Tang"
+        git config --global user.email "wei@that.world"
     - name: Checkout submodules
       run: git submodule update --init --recursive
     - name: Install dependencies

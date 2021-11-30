@@ -2391,6 +2391,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@neatcoin/page-registry@workspace:packages/page-registry":
+  version: 0.0.0-use.local
+  resolution: "@neatcoin/page-registry@workspace:packages/page-registry"
+  dependencies:
+    "@babel/runtime": ^7.16.3
+    "@polkadot/react-components": ^0.98.2-106
+    "@polkadot/react-query": ^0.98.2-106
+  languageName: unknown
+  linkType: soft
+
 "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3":
   version: 2.1.8-no-fsevents.3
   resolution: "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3"

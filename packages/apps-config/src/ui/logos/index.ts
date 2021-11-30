@@ -9,6 +9,7 @@
 // anything for a specific chain, most would probably fit into the node category (but allow for chain-specific)
 // alphabetical
 import { sanitize } from '../util';
+import extensionPolkadotJs from './extensions/polkadot-js.svg';
 
 import emptyLogo from './empty.svg';
 // last-resort fallback, just something empty

@@ -31,6 +31,7 @@ import techcomm from './techcomm';
 import teleport from './teleport';
 import transfer from './transfer';
 import treasury from './treasury';
+import registry from './registry';
 
 export default function create (t: TFunction): Routes {
   return [
@@ -60,6 +61,7 @@ export default function create (t: TFunction): Routes {
     signing(t),
     sudo(t),
     js(t),
-    settings(t)
+    settings(t),
+    registry(t)
   ];
 }

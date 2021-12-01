@@ -1,7 +1,6 @@
 {
   "extends": "@polkadot/dev/config/tsconfig.json",
   "exclude": [
-    "apps/**/*",
     "build/**/*",
     "**/build/**/*"
   ],

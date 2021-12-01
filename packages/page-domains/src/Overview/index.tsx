@@ -8,10 +8,11 @@ import type { ComponentProps as Props } from '../types';
 import { DomainName, NameHash, RegistryOwnership, RegistryOwnershipEntries } from '@neatcoin/types/interfaces';
 import React from 'react';
 
-import { AddressSmall, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
+import { AddressSmall, Button, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
 import { useApi, useCall } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
+import Register from './Register';
 
 function hexToName (hex: string): string {
   let ret = '';
@@ -55,6 +56,9 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
             {ownerships ? ownerships.length : <Spinner noLabel />}
           </CardSummary>
         </section>
+        <Button.Group>
+          <Register />
+        </Button.Group>
       </SummaryBox>
       <Table
         empty={!ownerships}

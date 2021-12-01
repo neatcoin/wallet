@@ -1,16 +1,16 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 import type { LinkOption } from '@polkadot/apps-config/endpoints/types';
 import type { Group } from './types';
 
+import { createWsEndpoints, CUSTOM_ENDPOINT_KEY } from '@neatcoin/apps-config';
 // ok, this seems to be an eslint bug, this _is_ a package import
 import punycode from 'punycode/';
 import React, { useCallback, useMemo, useState } from 'react';
 import store from 'store';
 import styled from 'styled-components';
 
-import { createWsEndpoints, CUSTOM_ENDPOINT_KEY } from '@neatcoin/apps-config';
 import { Button, Input, Sidebar } from '@polkadot/react-components';
 import { settings } from '@polkadot/ui-settings';
 import { isAscii } from '@polkadot/util';

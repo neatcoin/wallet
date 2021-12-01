@@ -1,5 +1,5 @@
-// Copyright 2017-2021 @polkadot/apps-config authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps-config authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 // overrides based on the actual software node type, valid values are one of -
 // polkadot, substrate, beachball, robohash

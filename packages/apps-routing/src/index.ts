@@ -1,5 +1,5 @@
 // Copyright 2017-2021 @neatcoin/apps-routing authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: GPL-3.0
 
 import type { TFunction } from 'i18next';
 import type { Routes } from './types';
@@ -20,6 +20,7 @@ import js from './js';
 import membership from './membership';
 import parachains from './parachains';
 import poll from './poll';
+import registry from './registry';
 import rpc from './rpc';
 import settings from './settings';
 import signing from './signing';
@@ -31,7 +32,6 @@ import techcomm from './techcomm';
 import teleport from './teleport';
 import transfer from './transfer';
 import treasury from './treasury';
-import registry from './registry';
 
 export default function create (t: TFunction): Routes {
   return [

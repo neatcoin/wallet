@@ -1,5 +1,5 @@
 // Copyright 2017-2021 @neatcoin/apps-routing authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: GPL-3.0
 
 import type { TFunction } from 'i18next';
 import type { Route } from './types';

@@ -1,10 +1,10 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
+import { createWsEndpoints } from '@neatcoin/apps-config';
 import queryString from 'query-string';
 import store from 'store';
 
-import { createWsEndpoints } from '@neatcoin/apps-config';
 import { extractIpfsDetails } from '@polkadot/react-hooks/useIpfs';
 import { settings } from '@polkadot/ui-settings';
 import { assert } from '@polkadot/util';

@@ -1,13 +1,13 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 import type { Route } from '@neatcoin/apps-routing/types';
 
+import createRoutes from '@neatcoin/apps-routing';
 import React, { Suspense, useContext, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import createRoutes from '@neatcoin/apps-routing';
 import { ErrorBoundary, Spinner, StatusContext, TabsContext } from '@polkadot/react-components';
 import { useApi } from '@polkadot/react-hooks';
 

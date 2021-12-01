@@ -1,13 +1,13 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 import type { BareProps as Props, ThemeDef } from '@polkadot/react-components/types';
 
+import { getSystemColor } from '@neatcoin/apps-config';
 import React, { useContext, useMemo } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import AccountSidebar from '@polkadot/app-accounts/Sidebar';
-import { getSystemColor } from '@neatcoin/apps-config';
 import GlobalStyle from '@polkadot/react-components/styles';
 import { useApi } from '@polkadot/react-hooks';
 import Signer from '@polkadot/react-signer';

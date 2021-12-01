@@ -2,34 +2,39 @@
 // SPDX-License-Identifier: GPL-3.0
 
 import type { ComponentProps as Props } from '../types';
-import { useApi, useCall } from '@polkadot/react-hooks';
-import { useTranslation } from '../translate';
-import { Table } from '@polkadot/react-components';
-import { AddressSmall, SummaryBox, CardSummary, Spinner } from '@polkadot/react-components';
 
 import React, { useMemo } from 'react';
 
-function hexToName(hex: string): string {
-  var ret = ""
-  for (var c = 2; c < hex.length; c += 2) {
+import { AddressSmall, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
+import { useApi, useCall } from '@polkadot/react-hooks';
+
+import { useTranslation } from '../translate';
+
+function hexToName (hex: string): string {
+  let ret = '';
+
+  for (let c = 2; c < hex.length; c += 2) {
     ret += String.fromCharCode(parseInt(hex.substr(c, 2), 16));
   }
+
   return ret;
 }
 
-function nameToString(name: string[]): string {
-  var ret = "";
-  for (var i = 0; i < name.length; i++) {
-    if (ret === "") {
+function nameToString (name: string[]): string {
+  let ret = '';
+
+  for (let i = 0; i < name.length; i++) {
+    if (ret === '') {
       ret = hexToName(name[i]);
     } else {
-      ret = hexToName(name[i]) + "." + ret;
+      ret = hexToName(name[i]) + '.' + ret;
     }
   }
-  if (ret === "") {
-    return "[root]"
+
+  if (ret === '') {
+    return '[root]';
   } else {
-    return ret
+    return ret;
   }
 }
 
@@ -56,6 +61,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
           const value = JSON.parse(valueRaw.toString());
           const name = value[0];
           const ownership = value[1];
+
           if (ownership.account) {
             return (
               <tr key={namehash.toString()}>

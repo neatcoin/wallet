@@ -1,5 +1,5 @@
-// Copyright 2017-2021 @polkadot/apps-config authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps-config authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 /* eslint sort-keys: ["error", "asc", { caseSensitive: false }] */
 
@@ -10,7 +10,6 @@
 // alphabetical
 import { sanitize } from '../util';
 import extensionPolkadotJs from './extensions/polkadot-js.svg';
-
 import emptyLogo from './empty.svg';
 // last-resort fallback, just something empty
 

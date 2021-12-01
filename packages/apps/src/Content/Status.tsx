@@ -1,5 +1,5 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
 import type { ActionStatus } from '@polkadot/react-components/Status/types';
 import type { EventRecord } from '@polkadot/types/interfaces';

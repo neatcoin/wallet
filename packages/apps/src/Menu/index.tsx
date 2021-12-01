@@ -1,17 +1,17 @@
-// Copyright 2017-2021 @polkadot/apps authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// Copyright 2021 @neatcoin/apps authors & contributors
+// SPDX-License-Identifier: GPL-3.0
 
-import type { TFunction } from 'i18next';
 import type { Route, Routes } from '@neatcoin/apps-routing/types';
+import type { TFunction } from 'i18next';
 import type { ApiProps } from '@polkadot/react-api/types';
 import type { AccountId } from '@polkadot/types/interfaces';
 import type { Group, Groups, ItemRoute } from './types';
 
+import createRoutes from '@neatcoin/apps-routing';
 import React, { useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import createRoutes from '@neatcoin/apps-routing';
 import { useAccounts, useApi, useCall, useTeleport } from '@polkadot/react-hooks';
 
 import { findMissingApis } from '../endpoint';

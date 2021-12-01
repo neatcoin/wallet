@@ -5,7 +5,6 @@ import React, { useMemo } from 'react';
 import { Route, Switch } from 'react-router';
 
 import { Tabs } from '@polkadot/react-components';
-import { useApi } from '@polkadot/react-hooks';
 
 import Overview from './Overview';
 import { useTranslation } from './translate';

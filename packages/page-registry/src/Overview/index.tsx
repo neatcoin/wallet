@@ -3,7 +3,7 @@
 
 import type { ComponentProps as Props } from '../types';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { AddressSmall, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
 import { useApi, useCall } from '@polkadot/react-hooks';
@@ -48,14 +48,14 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
     <div className={className}>
       <SummaryBox>
         <section>
-          <CardSummary label='Domain count'>
+          <CardSummary label={t('Domain count')}>
             {ownerships ? ownerships.length : <Spinner noLabel />}
           </CardSummary>
         </section>
       </SummaryBox>
       <Table
         empty={!ownerships}
-        header={[['Registered domains', 'start', 2], ['current owner', 'expand']]}
+        header={[[t('Registered domains'), 'start', 2], [t('current owner'), 'expand']]}
       >
         {(ownerships || []).map(([namehash, valueRaw]): React.ReactNode => {
           const value = JSON.parse(valueRaw.toString());

@@ -37,8 +37,8 @@ function Register ({ className = '' }: Props): React.ReactElement<Props> | null 
             <p>
               This allows you to register domain names. Currently, only
               <code>.{TLD}</code> TLD is enabled in a first-come-first-served
-              basis. More TLDs will be added later. Registration costs 500 {COIN}
-              per year to avoid domain name hoarding. You are guaranteed to only pay
+              basis. More TLDs will be added later. Registration costs 500 {COIN} per
+              year to avoid domain name hoarding. You are guaranteed to only pay
               at maximum this amount for renewal fees.
             </p>
             {domainLabel && domainLabel !== '' && (

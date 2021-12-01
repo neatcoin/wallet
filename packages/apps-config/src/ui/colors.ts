@@ -25,7 +25,7 @@ export { emptyColor };
 // NOTE: This is as retrieved via the system.chain RPC
 export const chainColors: Record<string, string> = Object.entries({
 
-}).reduce<Record<string, string>>((colors, [chain, color]) => ({
+} as Record<string, string>).reduce<Record<string, string>>((colors, [chain, color]) => ({
   ...colors,
   [sanitize(chain)]: color
 }), {});
@@ -34,7 +34,7 @@ export const chainColors: Record<string, string> = Object.entries({
 // NOTE: This is as retrieved via the system.name RPC
 export const nodeColors: Record<string, string> = Object.entries({
 
-}).reduce<Record<string, string>>((colors, [node, color]) => ({
+} as Record<string, string>).reduce<Record<string, string>>((colors, [node, color]) => ({
   ...colors,
   [sanitize(node)]: color
 }), {});
@@ -43,7 +43,7 @@ export const nodeColors: Record<string, string> = Object.entries({
 // NOTE: This is as retrieved via the system.name RPC
 export const specColors: Record<string, string> = Object.entries({
 
-}).reduce<Record<string, string>>((colors, [spec, color]) => ({
+} as Record<string, string>).reduce<Record<string, string>>((colors, [spec, color]) => ({
   ...colors,
   [sanitize(spec)]: color
 }), {});

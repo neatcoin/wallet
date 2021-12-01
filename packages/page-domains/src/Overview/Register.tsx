@@ -42,7 +42,7 @@ function Register ({ className = '' }: Props): React.ReactElement<Props> | null 
               at maximum this amount for renewal fees.
             </p>
             {domainLabel && domainLabel !== '' && (
-              <p>Your domain name will be {domainLabel}.{TLD}</p>
+              <p>Your domain name will be <code>{domainLabel}.{TLD}</code></p>
             )}
             <InputAddress
               help={t<string>('Select the account you wish to register the domain name with.')}

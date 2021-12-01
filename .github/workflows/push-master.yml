@@ -24,6 +24,8 @@ jobs:
       run: git submodule update --init --recursive
     - name: Install dependencies
       run: yarn install --immutable | grep -v 'YN0013'
+    - name: Check lints
+      run: yarn lint
     - name: Build apps
       run: yarn build
     - name: Publish to Github Pages

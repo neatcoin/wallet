@@ -1,4 +1,4 @@
-// Copyright 2021 @neatcoin/page-registry authors & contributors
+// Copyright 2021 @neatcoin/page-domains authors & contributors
 // SPDX-License-Identifier: GPL-3.0
 
 import React from 'react';
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-function Registry ({ basePath, className }: Props): React.ReactElement<Props> {
+function Domains ({ basePath, className }: Props): React.ReactElement<Props> {
   return (
     <App
       basePath={basePath}
@@ -19,4 +19,4 @@ function Registry ({ basePath, className }: Props): React.ReactElement<Props> {
   );
 }
 
-export default React.memo(Registry);
+export default React.memo(Domains);

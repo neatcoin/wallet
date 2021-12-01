@@ -1,6 +1,6 @@
 {
   "license": "GPL-3.0",
-  "name": "@neatcoin/page-registry",
+  "name": "@neatcoin/page-domains",
   "sideEffects": false,
   "type": "module",
   "version": "0.1.0",

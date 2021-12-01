@@ -13,6 +13,7 @@ import claims from './claims';
 import contracts from './contracts';
 import council from './council';
 import democracy from './democracy';
+import domains from './domains';
 import explorer from './explorer';
 import extrinsics from './extrinsics';
 import gilt from './gilt';
@@ -20,7 +21,6 @@ import js from './js';
 import membership from './membership';
 import parachains from './parachains';
 import poll from './poll';
-import registry from './registry';
 import rpc from './rpc';
 import settings from './settings';
 import signing from './signing';
@@ -62,6 +62,6 @@ export default function create (t: TFunction): Routes {
     sudo(t),
     js(t),
     settings(t),
-    registry(t)
+    domains(t)
   ];
 }

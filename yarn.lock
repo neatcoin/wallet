@@ -2365,9 +2365,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@neatcoin/page-registry@workspace:packages/page-registry":
+"@neatcoin/page-domains@workspace:packages/page-domains":
   version: 0.0.0-use.local
-  resolution: "@neatcoin/page-registry@workspace:packages/page-registry"
+  resolution: "@neatcoin/page-domains@workspace:packages/page-domains"
   dependencies:
     "@babel/runtime": ^7.16.3
     "@polkadot/react-components": ^0.98.2-106

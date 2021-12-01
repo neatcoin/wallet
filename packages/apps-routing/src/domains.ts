@@ -4,7 +4,7 @@
 import type { TFunction } from 'i18next';
 import type { Route } from './types';
 
-import Component from '@neatcoin/page-registry';
+import Component from '@neatcoin/page-domains';
 
 export default function create (t: TFunction): Route {
   return {
@@ -14,7 +14,7 @@ export default function create (t: TFunction): Route {
     },
     group: 'domains',
     icon: 'podcast',
-    name: 'registry',
-    text: t('nav.registry', 'Registry', { ns: 'apps-routing' })
+    name: 'domains',
+    text: t('nav.domains', 'Domains', { ns: 'apps-routing' })
   };
 }

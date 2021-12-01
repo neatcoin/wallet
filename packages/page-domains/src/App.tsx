@@ -1,4 +1,4 @@
-// Copyright 2021 @neatcoin/page-registry authors & contributors
+// Copyright 2021 @neatcoin/page-domains authors & contributors
 // SPDX-License-Identifier: GPL-3.0
 
 import React, { useMemo } from 'react';
@@ -14,7 +14,7 @@ interface Props {
   className?: string;
 }
 
-function RegistryApp ({ basePath, className }: Props): React.ReactElement<Props> {
+function DomainsApp ({ basePath, className }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
 
   const items = useMemo(() => [
@@ -40,4 +40,4 @@ function RegistryApp ({ basePath, className }: Props): React.ReactElement<Props>
   );
 }
 
-export default React.memo(RegistryApp);
+export default React.memo(DomainsApp);

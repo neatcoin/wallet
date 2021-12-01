@@ -23,14 +23,14 @@ function hexToName (hex: string): string {
   return ret;
 }
 
-function nameToString (name: string[]): string {
+function nameToString (name: DomainName): string {
   let ret = '';
 
   for (let i = 0; i < name.length; i++) {
     if (ret === '') {
-      ret = hexToName(name[i]);
+      ret = hexToName(name[i].toString());
     } else {
-      ret = hexToName(name[i]) + '.' + ret;
+      ret = hexToName(name[i].toString()) + '.' + ret;
     }
   }
 
@@ -71,7 +71,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
             if (ownership.isAccount) {
               return (
                 <tr key={namehash.toString()}>
-                  <td>{nameToString(JSON.parse(name.toString()) as string[])}</td>
+                  <td>{nameToString(name)}</td>
                   <td className='expand all'></td>
                   <td className='address'><AddressSmall value={ownership.asAccount} /></td>
                 </tr>

@@ -1,8 +1,11 @@
 // Copyright 2021 @neatcoin/page-registry authors & contributors
 // SPDX-License-Identifier: GPL-3.0
 
+import type { Option } from '@polkadot/types';
+import type { ITuple } from '@polkadot/types/types';
 import type { ComponentProps as Props } from '../types';
 
+import { DomainName, NameHash, RegistryOwnership, RegistryOwnershipEntries } from '@neatcoin/types/interfaces';
 import React from 'react';
 
 import { AddressSmall, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
@@ -42,13 +45,13 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
   const { api } = useApi();
 
-  const ownerships = useCall<unknown>(api.query.registry.ownerships.entries);
+  const ownerships = useCall<RegistryOwnershipEntries>(api.query.registry.ownerships.entries);
 
   return (
     <div className={className}>
       <SummaryBox>
         <section>
-          <CardSummary label={t('Domain count')}>
+          <CardSummary label={t<string>('Domain count')}>
             {ownerships ? ownerships.length : <Spinner noLabel />}
           </CardSummary>
         </section>
@@ -57,19 +60,27 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
         empty={!ownerships}
         header={[[t('Registered domains'), 'start', 2], [t('current owner'), 'expand']]}
       >
-        {(ownerships || []).map(([namehash, valueRaw]): React.ReactNode => {
-          const value = JSON.parse(valueRaw.toString());
-          const name = value[0];
-          const ownership = value[1];
+        {(ownerships || []).map((entry: ITuple<[NameHash, Option<ITuple<[DomainName, RegistryOwnership]>>]>): React.ReactNode | null => {
+          const namehash = entry[0];
+          const value = entry[1];
 
-          if (ownership.account) {
-            return (
-              <tr key={namehash.toString()}>
-                <td>{nameToString(name)}</td>
-                <td className='expand all'></td>
-                <td className='address'><AddressSmall value={ownership.account} /></td>
-              </tr>
-            );
+          if (value.isSome) {
+            const name = value.unwrap()[0];
+            const ownership = value.unwrap()[1];
+
+            if (ownership.isAccount) {
+              return (
+                <tr key={namehash.toString()}>
+                  <td>{nameToString(JSON.parse(name.toString()) as string[])}</td>
+                  <td className='expand all'></td>
+                  <td className='address'><AddressSmall value={ownership.asAccount} /></td>
+                </tr>
+              );
+            } else {
+              return null;
+            }
+          } else {
+            return null;
           }
         })}
       </Table>

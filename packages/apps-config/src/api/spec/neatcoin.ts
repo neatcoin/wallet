@@ -11,10 +11,9 @@ const definitions: OverrideBundleDefinition = {
     {
       minmax: [0, undefined],
       types: {
-        Label: 'Vec<u8>',
-        Name: 'Vec<Label>',
-        NameHash: 'H256',
-        Value: {
+        NpDomainLabel: 'Vec<u8>',
+        NpDomainName: 'Vec<NpDomainLabel>',
+        PalletVariablesValue: {
           _enum: {
             U32: 'U32',
             U64: 'U64',

@@ -16,6 +16,8 @@
       "@neatcoin/apps-routing": [ "packages/apps-routing/src" ],
       "@neatcoin/page-registry/*": [ "packages/page-registry/src/*" ],
       "@neatcoin/page-registry": [ "packages/page-registry/src" ],
+      "@neatcoin/types/*": [ "packages/types/src/*" ],
+      "@neatcoin/types": [ "packages/types/src" ],
       "@polkadot/apps/*": [ "apps/packages/apps/src/*" ],
       "@polkadot/apps": [ "apps/packages/apps/src" ],
       "@polkadot/apps-config": [ "apps/packages/apps-config/src" ],

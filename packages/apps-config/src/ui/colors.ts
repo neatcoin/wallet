@@ -32,7 +32,7 @@ export const chainColors: Record<string, string> = Object.entries({
 
 // Alphabetical overrides based on the actual software node type
 // NOTE: This is as retrieved via the system.name RPC
-export const nodeColors = Object.entries({
+export const nodeColors: Record<string, string> = Object.entries({
 
 }).reduce<Record<string, string>>((colors, [node, color]) => ({
   ...colors,
@@ -41,7 +41,7 @@ export const nodeColors = Object.entries({
 
 // Alphabetical overrides based on the actual software node type
 // NOTE: This is as retrieved via the system.name RPC
-export const specColors = Object.entries({
+export const specColors: Record<string, string> = Object.entries({
 
 }).reduce<Record<string, string>>((colors, [spec, color]) => ({
   ...colors,

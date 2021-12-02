@@ -9,7 +9,7 @@ import { DomainName, NameHash, RegistryOwnership, RegistryOwnershipEntries } fro
 import React from 'react';
 
 import { AddressSmall, Button, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
-import { useApi, useCall } from '@polkadot/react-hooks';
+import { useApi, useEventTrigger, useMapEntries } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
 import Register from './Register';
@@ -42,11 +42,16 @@ function nameToString (name: DomainName): string {
   }
 }
 
+function useOwnershipEntries (): RegistryOwnershipEntries | undefined {
+  const { api } = useApi();
+  const trigger = useEventTrigger([api.events.registry.OwnershipSet]);
+
+  return useMapEntries(api.query.registry.ownerships, { at: trigger.blockHash });
+}
+
 function Overview ({ className = '' }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
-  const { api } = useApi();
-
-  const ownerships = useCall<RegistryOwnershipEntries>(api.query.registry.ownerships.entries);
+  const ownerships = useOwnershipEntries();
 
   return (
     <div className={className}>

@@ -67,7 +67,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
       </SummaryBox>
       <Table
         empty={!ownerships}
-        header={[[t('Registered domains'), 'start', 2], [t('current owner'), 'expand']]}
+        header={[[t('Registered domains'), 'start', 2], [t('type'), 'expand'], [t('current owner')]]}
       >
         {(ownerships || []).map((entry: ITuple<[NameHash, Option<ITuple<[DomainName, RegistryOwnership]>>]>): React.ReactNode | null => {
           const namehash = entry[0];
@@ -77,14 +77,31 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
             const name = value.unwrap()[0];
             const ownership = value.unwrap()[1];
 
-            if (ownership.isAccount) {
-              return (
-                <tr key={namehash.toString()}>
-                  <td>{nameToString(name)}</td>
-                  <td className='expand all'></td>
-                  <td className='address'><AddressSmall value={ownership.asAccount} /></td>
-                </tr>
-              );
+            if (ownership.isAccount || ownership.isFCFS || ownership.isRoot) {
+              return (<tr key={namehash.toString()}>
+                <td>{nameToString(name)}</td>
+                <td className='expand all'></td>
+                {(() => {
+                  if (ownership.isAccount) {
+                    return <td>Account</td>;
+                  } else if (ownership.isFCFS) {
+                    return <td>FCFS top-level</td>;
+                  } else if (ownership.isRoot) {
+                    return <td>External / ICANN</td>;
+                  } else {
+                    return <td>Other</td>;
+                  }
+                })()}
+                {(() => {
+                  if (ownership.isAccount) {
+                    return (
+                      <td className='address'><AddressSmall value={ownership.asAccount} /></td>
+                    );
+                  } else {
+                    return <td className='address'><AddressSmall value={null} /></td>;
+                  }
+                })()}
+              </tr>);
             } else {
               return null;
             }

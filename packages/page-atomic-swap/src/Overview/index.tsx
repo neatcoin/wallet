@@ -4,13 +4,14 @@
 import { PendingSwap, PendingSwapEntries } from '@neatcoin/types/interfaces';
 import React from 'react';
 
-import { AddressSmall, Table } from '@polkadot/react-components';
+import { AddressSmall, Table, SummaryBox, Button, CardSummary, Spinner } from '@polkadot/react-components';
 import { useApi, useEventTrigger, useMapEntries } from '@polkadot/react-hooks';
 import { FormatBalance } from '@polkadot/react-query';
 import { Bytes, Option } from '@polkadot/types';
 import { ITuple } from '@polkadot/types/types';
 
 import { useTranslation } from '../translate';
+import Declare from './Declare';
 
 interface Props {
   className?: string;
@@ -29,12 +30,24 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
 
   return (
     <div className={className}>
+      <SummaryBox>
+        <section>
+          <CardSummary label={t<string>('Pending count')}>
+            {pendingSwaps ? pendingSwaps.length : <Spinner noLabel />}
+          </CardSummary>
+        </section>
+        <Button.Group>
+          <Declare type='initiator' />
+          <Declare type='counterparty' />
+        </Button.Group>
+      </SummaryBox>
       <Table
         empty={!pendingSwaps}
-        header={[[t('Pending swaps'), 'start', 2], [t('initiator'), 'expand'], [t('end block')], [t('value')]]}
+        header={[[t('Pending swaps'), 'start', 2], [t('sender'), 'expand'], [(t('receiver'))], [t('end block')], [t('value')]]}
       >
         {(pendingSwaps || []).map((entry: ITuple<[Bytes, Option<PendingSwap>]>): React.ReactNode | null => {
           const secretHash = '0x' + Buffer.from(entry[0].slice(-32)).toString('hex');
+          const receiver = '0x' + Buffer.from(entry[0].slice(-80, -48)).toString('hex');
 
           if (entry[1].isSome) {
             const value = entry[1].unwrap();
@@ -42,12 +55,11 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
             const action = value.action;
             const endBlock = value.endBlock;
 
-            console.log(action);
-
             return (<tr key={source.toString() + ':' + secretHash.toString()}>
               <td>{secretHash}</td>
               <td className='expand all'></td>
               <td className='address'><AddressSmall value={source} /></td>
+              <td className='address'><AddressSmall value={receiver} /></td>
               <td>{endBlock.toString()}</td>
               <td><FormatBalance value={action.value} /></td>
             </tr>);

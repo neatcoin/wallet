@@ -66,7 +66,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
         </Button.Group>
       </SummaryBox>
       <Table
-        empty={!ownerships}
+        empty={t<string>('No registered domain yet.')}
         header={[[t('Registered domains'), 'start', 2], [t('type'), 'expand'], [t('current owner')]]}
       >
         {(ownerships || []).map((entry: ITuple<[NameHash, Option<ITuple<[DomainName, RegistryOwnership]>>]>): React.ReactNode | null => {

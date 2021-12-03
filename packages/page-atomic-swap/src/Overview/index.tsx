@@ -43,7 +43,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
         </Button.Group>
       </SummaryBox>
       <Table
-        empty={!pendingSwaps}
+        empty={t<string>('No pending atomic swap.')}
         header={[[t('Pending swaps'), 'start', 2], [t('sender'), 'expand'], [(t('receiver'))], [t('end block')], [t('value')], [t('claim')]]}
       >
         {(pendingSwaps || []).map((entry: ITuple<[Bytes, Option<PendingSwap>]>): React.ReactNode | null => {

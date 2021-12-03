@@ -2365,6 +2365,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@neatcoin/page-atomic-swap@workspace:packages/page-atomic-swap":
+  version: 0.0.0-use.local
+  resolution: "@neatcoin/page-atomic-swap@workspace:packages/page-atomic-swap"
+  languageName: unknown
+  linkType: soft
+
 "@neatcoin/page-domains@workspace:packages/page-domains":
   version: 0.0.0-use.local
   resolution: "@neatcoin/page-domains@workspace:packages/page-domains"

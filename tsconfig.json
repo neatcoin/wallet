@@ -16,6 +16,8 @@
       "@neatcoin/apps-routing": [ "packages/apps-routing/src" ],
       "@neatcoin/page-domains/*": [ "packages/page-domains/src/*" ],
       "@neatcoin/page-domains": [ "packages/page-domains/src" ],
+      "@neatcoin/page-atomic-swap/*": [ "packages/page-atomic-swap/src/*" ],
+      "@neatcoin/page-atomic-swap": [ "packages/page-atomic-swap/src" ],
       "@neatcoin/types/*": [ "packages/types/src/*" ],
       "@neatcoin/types": [ "packages/types/src" ],
       "@polkadot/apps/*": [ "apps/packages/apps/src/*" ],

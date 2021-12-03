@@ -1,0 +1,7 @@
+{
+  "license": "GPL-3.0",
+  "name": "@neatcoin/page-atomic-swap",
+  "private": true,
+  "sideEffects": false,
+  "version": "0.1.0"
+}

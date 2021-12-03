@@ -7,6 +7,7 @@ import type { Routes } from './types';
 import accounts from './accounts';
 import addresses from './addresses';
 import assets from './assets';
+import atomicSwap from './atomic-swap';
 import bounties from './bounties';
 import calendar from './calendar';
 import claims from './claims';
@@ -62,6 +63,7 @@ export default function create (t: TFunction): Routes {
     sudo(t),
     js(t),
     settings(t),
-    domains(t)
+    domains(t),
+    atomicSwap(t)
   ];
 }

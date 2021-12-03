@@ -4,13 +4,14 @@
 import { PendingSwap, PendingSwapEntries } from '@neatcoin/types/interfaces';
 import React from 'react';
 
-import { AddressSmall, Table, SummaryBox, Button, CardSummary, Spinner } from '@polkadot/react-components';
+import { AddressSmall, Button, CardSummary, Spinner, SummaryBox, Table } from '@polkadot/react-components';
 import { useApi, useEventTrigger, useMapEntries } from '@polkadot/react-hooks';
 import { FormatBalance } from '@polkadot/react-query';
 import { Bytes, Option } from '@polkadot/types';
 import { ITuple } from '@polkadot/types/types';
 
 import { useTranslation } from '../translate';
+import Claim from './Claim';
 import Declare from './Declare';
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
 
 function usePendingSwapEntries (): PendingSwapEntries | undefined {
   const { api } = useApi();
-  const trigger = useEventTrigger([api.events.atomicSwap.NewSwap]);
+  const trigger = useEventTrigger([api.events.atomicSwap.NewSwap, api.events.atomicSwap.SwapClaimed]);
 
   return useMapEntries(api.query.atomicSwap.pendingSwaps, { at: trigger.blockHash });
 }
@@ -43,7 +44,7 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
       </SummaryBox>
       <Table
         empty={!pendingSwaps}
-        header={[[t('Pending swaps'), 'start', 2], [t('sender'), 'expand'], [(t('receiver'))], [t('end block')], [t('value')]]}
+        header={[[t('Pending swaps'), 'start', 2], [t('sender'), 'expand'], [(t('receiver'))], [t('end block')], [t('value')], [t('claim')]]}
       >
         {(pendingSwaps || []).map((entry: ITuple<[Bytes, Option<PendingSwap>]>): React.ReactNode | null => {
           const secretHash = '0x' + Buffer.from(entry[0].slice(-32)).toString('hex');
@@ -62,6 +63,13 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
               <td className='address'><AddressSmall value={receiver} /></td>
               <td>{endBlock.toString()}</td>
               <td><FormatBalance value={action.value} /></td>
+              <td>
+                <Claim
+                  account={receiver}
+                  secretHash={secretHash}
+                  value={action.value}
+                />
+              </td>
             </tr>);
           } else {
             return null;

@@ -7,7 +7,7 @@ import type { Routes } from './types';
 import accounts from './accounts';
 import addresses from './addresses';
 import assets from './assets';
-import atomicSwap from './atomic-swap';
+import atomicSwap from './atomicSwap';
 import bounties from './bounties';
 import calendar from './calendar';
 import claims from './claims';

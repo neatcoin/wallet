@@ -18,7 +18,7 @@ export interface NameHash extends H256 {}
 export interface RegistryOwnership extends Enum {
   readonly isNone: boolean;
   readonly isRoot: boolean;
-  readonly isFCFS: boolean;
+  readonly isFcfs: boolean;
   readonly isAccount: boolean;
   readonly asAccount: AccountId;
 }

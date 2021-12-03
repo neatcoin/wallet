@@ -77,14 +77,14 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
             const name = value.unwrap()[0];
             const ownership = value.unwrap()[1];
 
-            if (ownership.isAccount || ownership.isFCFS || ownership.isRoot) {
+            if (ownership.isAccount || ownership.isFcfs || ownership.isRoot) {
               return (<tr key={namehash.toString()}>
                 <td>{nameToString(name)}</td>
                 <td className='expand all'></td>
                 {(() => {
                   if (ownership.isAccount) {
                     return <td>Account</td>;
-                  } else if (ownership.isFCFS) {
+                  } else if (ownership.isFcfs) {
                     return <td>FCFS top-level</td>;
                   } else if (ownership.isRoot) {
                     return <td>External / ICANN</td>;

@@ -3,3 +3,4 @@
 
 export { default as nomo } from './nomo/definitions';
 export { default as variables } from './variables/definitions';
+export { default as atomicSwap } from './atomicSwap/definitions';

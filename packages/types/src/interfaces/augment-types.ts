@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 declare module '@polkadot/types/types/registry' {
+  import type { BalanceSwapAction, PendingSwap, PendingSwapEntries } from '@neatcoin/types/interfaces/atomicSwap';
   import type { DomainLabel, DomainName, NameHash, RegistryOwnership, RegistryOwnershipEntries } from '@neatcoin/types/interfaces/nomo';
   import type { VariableValue } from '@neatcoin/types/interfaces/variables';
   import type { BitVec, Bool, Bytes, Data, I128, I16, I256, I32, I64, I8, Json, Null, Raw, StorageKey, Text, Type, U128, U16, U256, U32, U64, U8, USize, bool, i128, i16, i256, i32, i64, i8, u128, u16, u256, u32, u64, u8, usize } from '@polkadot/types';
@@ -136,6 +137,7 @@ declare module '@polkadot/types/types/registry' {
     BalanceLockTo212: BalanceLockTo212;
     BalanceOf: BalanceOf;
     BalanceStatus: BalanceStatus;
+    BalanceSwapAction: BalanceSwapAction;
     BeefyCommitment: BeefyCommitment;
     BeefyId: BeefyId;
     BeefyKey: BeefyKey;
@@ -685,6 +687,8 @@ declare module '@polkadot/types/types/registry' {
     PendingChange: PendingChange;
     PendingPause: PendingPause;
     PendingResume: PendingResume;
+    PendingSwap: PendingSwap;
+    PendingSwapEntries: PendingSwapEntries;
     Perbill: Perbill;
     Percent: Percent;
     PerDispatchClassU32: PerDispatchClassU32;

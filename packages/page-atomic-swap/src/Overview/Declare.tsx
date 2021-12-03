@@ -47,54 +47,61 @@ function Declare ({ className = '', type }: Props): React.ReactElement<Props> | 
               type='account'
               withLabel
             />
-            {type === 'initiator' ? <>
-              <Input
-                className='medium'
-                help={t<string>('Secret for the atomic swap.')}
-                label={t<string>('secret')}
-                onChange={setSecretOrHash}
-                value={secretOrHash}
-              />
-              <Input
-                className='disabledLook'
-                help={t<string>('Secret hash to give to the counterparty.')}
-                label={t<string>('secret hash')}
-                value={blake2AsHex(secretOrHash)}
-              />
-            </> : <>
-              <Input
-                className='medium'
-                help={t<string>('Secret hash from the initiator.')}
-                label={t<string>('secret hash')}
-                onChange={setSecretOrHash}
-                value={secretOrHash}
-              />
-            </>}
+            {type === 'initiator'
+              ? <>
+                <Input
+                  className='medium'
+                  help={t<string>('Secret for the atomic swap.')}
+                  label={t<string>('secret')}
+                  onChange={setSecretOrHash}
+                  value={secretOrHash}
+                />
+                <Input
+                  className='disabledLook'
+                  help={t<string>('Secret hash to give to the counterparty.')}
+                  label={t<string>('secret hash')}
+                  value={blake2AsHex(secretOrHash)}
+                />
+              </>
+              : <>
+                <Input
+                  className='medium'
+                  help={t<string>('Secret hash from the initiator.')}
+                  label={t<string>('secret hash')}
+                  onChange={setSecretOrHash}
+                  value={secretOrHash}
+                />
+              </>}
             <InputBalance
               help={t<string>('Value to send to the other party.')}
               label={t<string>('value')}
-              value={value}
               onChange={setValue}
+              value={value}
             />
             <InputNumber
               help={t<string>('Duration of the swap.')}
               label={t<string>('duration')}
-              value={duration}
               onChange={setDuration}
+              value={duration}
             />
           </Modal.Content>
           <Modal.Actions>
-            {type === 'initiator' ? <TxButton
-              accountId={source}
-              onStart={onClose}
-              params={[target, blake2AsHex(secretOrHash), { value }, duration]}
-              tx={api.tx.atomicSwap.createSwap}
-            /> : <TxButton
-              accountId={source}
-              onStart={onClose}
-              params={[target, secretOrHash, { value }, duration]}
-              tx={api.tx.atomicSwap.createSwap}
-            />}
+            {type === 'initiator'
+              ? (
+                <TxButton
+                  accountId={source}
+                  onStart={onClose}
+                  params={[target, blake2AsHex(secretOrHash), { value }, duration]}
+                  tx={api.tx.atomicSwap.createSwap}
+                />)
+              : (
+                <TxButton
+                  accountId={source}
+                  onStart={onClose}
+                  params={[target, secretOrHash, { value }, duration]}
+                  tx={api.tx.atomicSwap.createSwap}
+                />)
+            }
           </Modal.Actions>
         </Modal>
       )}

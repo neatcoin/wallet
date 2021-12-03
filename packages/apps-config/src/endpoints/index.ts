@@ -5,7 +5,7 @@ import type { TFunction } from 'i18next';
 import type { LinkOption } from './types';
 
 import { createCustom, createDev, createOwn } from './development';
-import { createProduction } from './production';
+import { createProduction, createProductionKulupu } from './production';
 import { createTesting } from './testing';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
@@ -23,6 +23,15 @@ export function createWsEndpoints (t: TFunction, firstOnly = false, withSort = t
     },
     ...createProduction(t, firstOnly, withSort),
     ...createTesting(t, firstOnly, withSort),
+    {
+      isDisabled: false,
+      isHeader: true,
+      isSpaced: true,
+      text: t('rpc.header.live', 'Kulupu networks', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...createProductionKulupu(t, firstOnly, withSort),
     {
       isDevelopment: true,
       isDisabled: false,

@@ -4,9 +4,11 @@
 import type { OverrideBundleDefinition } from '@polkadot/types/types';
 
 import neatcoin from './neatcoin';
+import kulupu from './kulupu';
 
 // NOTE: The mapping is done from specName in state.getRuntimeVersion
 const spec: Record<string, OverrideBundleDefinition> = {
+  kulupu,
   neatcoin,
   vodka: neatcoin
 };

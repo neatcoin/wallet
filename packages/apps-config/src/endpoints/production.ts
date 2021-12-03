@@ -26,3 +26,16 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
     }
   ], firstOnly, withSort);
 }
+
+export function createProductionKulupu (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
+  return expandEndpoints(t, [
+    {
+      dnslink: 'kulupu',
+      info: 'kulupu',
+      text: t('rpc.prod.kulupu', 'Kulupu', { ns: 'apps-config' }),
+      providers: {
+        Kulupu: 'wss://rpc.kulupu.corepaper.org/ws'
+      }
+    }
+  ], firstOnly, withSort);
+}

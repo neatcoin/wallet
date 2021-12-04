@@ -31,6 +31,6 @@ jobs:
     - name: Publish to Github Pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        NODE_DEBUG=gh-pages yarn polkadot-exec-ghpages --dist packages/apps/build --dest .
+        yarn polkadot-exec-ghpages --dist packages/apps/build --dest .
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

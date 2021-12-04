@@ -48,9 +48,9 @@ const definitions: OverrideBundleDefinition = {
       // enable pallet-atomic-swap in runtime 24
       minmax: [24, undefined],
       types: {
-        HashedProof: "[u8; 32]",
+        HashedProof: '[u8; 32]',
         SwapAction: {
-          value: "Balance"
+          value: 'Balance'
         }
       }
     }

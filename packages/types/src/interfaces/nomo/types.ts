@@ -1,9 +1,9 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Bytes, Enum, Option, Vec } from '@polkadot/types';
-  import type { AccountId, H256 } from '@polkadot/types/interfaces/runtime';
-  import type { ITuple } from '@polkadot/types/types';
+import type { Bytes, Enum, Option, Vec } from '@polkadot/types-codec';
+import type { ITuple } from '@polkadot/types-codec/types';
+import type { AccountId, H256 } from '@polkadot/types/interfaces/runtime';
 
 /** @name DomainLabel */
 export interface DomainLabel extends Bytes {}
@@ -21,6 +21,7 @@ export interface RegistryOwnership extends Enum {
   readonly isFcfs: boolean;
   readonly isAccount: boolean;
   readonly asAccount: AccountId;
+  readonly type: 'None' | 'Root' | 'Fcfs' | 'Account';
 }
 
 /** @name RegistryOwnershipEntries */

@@ -1,9 +1,9 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Bytes, Option, Struct, Vec } from '@polkadot/types';
-  import type { AccountId, Balance, BlockNumber } from '@polkadot/types/interfaces/runtime';
-  import type { ITuple } from '@polkadot/types/types';
+import type { Bytes, Option, Struct, Vec } from '@polkadot/types-codec';
+import type { ITuple } from '@polkadot/types-codec/types';
+import type { AccountId, Balance, BlockNumber } from '@polkadot/types/interfaces/runtime';
 
 /** @name BalanceSwapAction */
 export interface BalanceSwapAction extends Struct {

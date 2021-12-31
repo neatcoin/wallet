@@ -1,7 +1,7 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Bool, Enum, U128, U32, U64 } from '@polkadot/types';
+import type { Bool, Enum, U128, U32, U64 } from '@polkadot/types-codec';
 
 /** @name VariableValue */
 export interface VariableValue extends Enum {
@@ -13,6 +13,7 @@ export interface VariableValue extends Enum {
   readonly asU128: U128;
   readonly isBool: boolean;
   readonly asBool: Bool;
+  readonly type: 'U32' | 'U64' | 'U128' | 'Bool';
 }
 
 export type PHANTOM_VARIABLES = 'variables';
